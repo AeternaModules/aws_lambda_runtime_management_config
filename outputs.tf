@@ -1,7 +1,3 @@
-output "lambda_runtime_management_configs_id" {
-  description = "Map of id values across all lambda_runtime_management_configs, keyed the same as var.lambda_runtime_management_configs"
-  value       = { for k, v in aws_lambda_runtime_management_config.lambda_runtime_management_configs : k => v.id if v.id != null && length(v.id) > 0 }
-}
 output "lambda_runtime_management_configs_function_arn" {
   description = "Map of function_arn values across all lambda_runtime_management_configs, keyed the same as var.lambda_runtime_management_configs"
   value       = { for k, v in aws_lambda_runtime_management_config.lambda_runtime_management_configs : k => v.function_arn if v.function_arn != null && length(v.function_arn) > 0 }
